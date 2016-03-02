@@ -5,6 +5,7 @@
 		<script type="text/javascript" 
 	    		src="https://public.tableau.com/javascripts/api/tableau-2.js"></script>
     		<script type="text/javascript">
+    			var viz, sheet;
         		function initViz() {
             			var containerDiv = document.getElementById("vizContainer"),
                 						url = "http://public.tableau.com/views/green-mark-buildingsV1/db-Main",
@@ -16,20 +17,20 @@
                     							}
                 						};
             
-            			var viz = new tableau.Viz(containerDiv, url, options); 
-            			// Create a viz object and embed it in the container div.
+            			viz = new tableau.Viz(containerDiv, url, options); 
         		}
-		function selectMark(typeName) {
-	            sheet.selectMarksAsync("db-Main", typeName, tableau.SelectionUpdateType.REPLACE);
-	        }
-	
-	        function addMarks(typeName) {
-	            sheet.selectMarksAsync("db-Main", typeName, tableau.SelectionUpdateType.ADD);
-	        }
-	
-	        function clearMarkSelection() {
-	            sheet.clearSelectedMarksAsync();
-	        }        		
+        		
+			function selectMark(typeName) {
+		            sheet.selectMarksAsync("db-Main", typeName, tableau.SelectionUpdateType.REPLACE);
+		        }
+		
+		        function addMarks(typeName) {
+		            sheet.selectMarksAsync("db-Main", typeName, tableau.SelectionUpdateType.ADD);
+		        }
+		
+		        function clearMarkSelection() {
+		            sheet.clearSelectedMarksAsync();
+		        }        		
     		</script>
 	</head>
 	<body onload="initViz();">
