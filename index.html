@@ -20,11 +20,11 @@
         		}
         		
 			function selectMark(typeName) {
-		            sheet.selectMarksAsync("db-Main", typeName, tableau.SelectionUpdateType.REPLACE);
+		            sheet.selectMarksAsync("map", typeName, tableau.SelectionUpdateType.REPLACE);
 		        }
 		
 		        function addMarks(typeName) {
-		            sheet.selectMarksAsync("db-Main", typeName, tableau.SelectionUpdateType.ADD);
+		            sheet.selectMarksAsync("map", typeName, tableau.SelectionUpdateType.ADD);
 		        }
 		
 		        function clearMarkSelection() {
