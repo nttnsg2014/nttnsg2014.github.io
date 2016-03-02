@@ -13,17 +13,17 @@
 			    						hideTabs: true,
 			    						hideToolbar: true,
 			    						onFirstInteractive: function () {
-										worksheet = viz.getWorkbook().getActiveSheet().getWorksheets().get("per by type (circle)");
+										//worksheet = viz.getWorkbook().getActiveSheet().getWorksheets().get("per by type (circle)");
                 						};
             			viz = new tableau.Viz(containerDiv, url, options); 
         		}
         		
 			function selectMark(typeName) {
-		            worksheet.selectMarksAsync("building type", typeName, tableau.SelectionUpdateType.REPLACE);
+		            worksheet.selectMarksAsync("Property Type", typeName, tableau.SelectionUpdateType.REPLACE);
 		        }
 		
 		        function addMarks(typeName) {
-		            worksheet.selectMarksAsync("building type", typeName, tableau.SelectionUpdateType.ADD);
+		            worksheet.selectMarksAsync("Property Type", typeName, tableau.SelectionUpdateType.ADD);
 		        }
 		
 		        function clearMarkSelection() {
