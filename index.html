@@ -16,7 +16,6 @@
                         							sheet = viz.getWorkbook().getActiveSheet();
                     							}
                 						};
-            
             			viz = new tableau.Viz(containerDiv, url, options); 
         		}
         		
@@ -34,7 +33,7 @@
     		</script>
 	</head>
 	<body onload="initViz();">
-    		<div id="vizContainer" style="width:100%; height:100%;"></div>  
+    		<div id="vizContainer" style="width:100%; height:90%;"></div>  
     		<br>
     		<button onclick="selectMark('Other');">Select 'Other'</button>
 		<button onclick="addMarks('College/University');">Add 'College/University' to the selection</button>
