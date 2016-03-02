@@ -5,30 +5,33 @@
 		<script type="text/javascript" 
 	    		src="https://public.tableau.com/javascripts/api/tableau-2.js"></script>
     		<script type="text/javascript">
-    			var viz, sheet;
+    			var viz, worksheet, dashboard, worksheetArray;
         		function initViz() {
             			var containerDiv = document.getElementById("vizContainer"),
                 						url = "http://public.tableau.com/views/green-mark-buildingsV1/db-Main",
                 						options = {
-                    							hideTabs: true,
-                    							hideToolbar: true,
-                    							onFirstInteractive: function () {
-                        							sheet = viz.getWorkbook().activateSheetAsync("per by type (circle)");
-                    							}
+			    						hideTabs: true,
+			    						hideToolbar: true,
+			    						onFirstInteractive: function () {
+										dashboard = viz.getWorkbook().getActiveSheet();
+									  	worksheetArray = dashboard.getWorksheets();
+			  							for (var i = 0; i < worksheetArray.length; i++) {
+											if (worksheetArray[i].getName() == "per by type (circle)")
+			  									worksheet = worksheetArray[i];
                 						};
             			viz = new tableau.Viz(containerDiv, url, options); 
         		}
         		
 			function selectMark(typeName) {
-		            sheet.selectMarksAsync("building type", typeName, tableau.SelectionUpdateType.REPLACE);
+		            worksheet.selectMarksAsync("building type", typeName, tableau.SelectionUpdateType.REPLACE);
 		        }
 		
 		        function addMarks(typeName) {
-		            sheet.selectMarksAsync("building type", typeName, tableau.SelectionUpdateType.ADD);
+		            worksheet.selectMarksAsync("building type", typeName, tableau.SelectionUpdateType.ADD);
 		        }
 		
 		        function clearMarkSelection() {
-		            sheet.clearSelectedMarksAsync();
+		            worksheet.clearSelectedMarksAsync();
 		        }        		
     		</script>
 	</head>
