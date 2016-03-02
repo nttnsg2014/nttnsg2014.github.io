@@ -13,7 +13,7 @@
                     							hideTabs: true,
                     							hideToolbar: true,
                     							onFirstInteractive: function () {
-                        							sheet = viz.getWorkbook().getActiveSheet();
+                        							sheet = viz.getWorkbook().activateSheetAsync("per by type (circle)");
                     							}
                 						};
             			viz = new tableau.Viz(containerDiv, url, options); 
