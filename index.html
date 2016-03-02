@@ -13,11 +13,7 @@
 			    						hideTabs: true,
 			    						hideToolbar: true,
 			    						onFirstInteractive: function () {
-										dashboard = viz.getWorkbook().getActiveSheet();
-									  	worksheetArray = dashboard.getWorksheets();
-			  							for (var i = 0; i < worksheetArray.length; i++) {
-											if (worksheetArray[i].getName() == "per by type (circle)")
-			  									worksheet = worksheetArray[i];
+										worksheet = viz.getWorkbook().getActiveSheet().getWorksheets().get("per by type (circle)");
                 						};
             			viz = new tableau.Viz(containerDiv, url, options); 
         		}
