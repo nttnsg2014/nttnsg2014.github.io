@@ -8,14 +8,13 @@
     			//var viz, worksheet, dashboard, worksheetArray;
         		function initViz() {
             			var containerDiv = document.getElementById("vizContainer"),
-                						url = "https://public.tableau.com/views/green-mark-buildingsV1/db-Main",
-                						options = {
-			    						hideTabs: true,
-			    						hideToolbar: true,
-			    						onFirstInteractive: function () {
-										console.log("Run this code when the viz has finished loading.");
-										//worksheet = viz.getWorkbook().getActiveSheet().getWorksheets().get("per by type (circle)");
-                						};
+                		    url = "https://public.tableau.com/views/green-mark-buildingsV1/db-Main",
+                		    options = {	hideTabs: true,
+    						hideToolbar: true,
+    						onFirstInteractive: function () {
+							console.log("Run this code when the viz has finished loading.");
+							//worksheet = viz.getWorkbook().getActiveSheet().getWorksheets().get("per by type (circle)");
+						}};
             			var viz = new tableau.Viz(containerDiv, url, options); 
         		}
     		</script>
