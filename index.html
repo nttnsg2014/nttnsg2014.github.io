@@ -13,6 +13,7 @@
 			    						hideTabs: true,
 			    						hideToolbar: true,
 			    						onFirstInteractive: function () {
+										console.log("Run this code when the viz has finished loading.");
 										//worksheet = viz.getWorkbook().getActiveSheet().getWorksheets().get("per by type (circle)");
                 						};
             			viz = new tableau.Viz(containerDiv, url, options); 
